@@ -1,11 +1,14 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "ob-glossary",
+	"name": "ob Glossary",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"description": "Manage glossaries in Obsidian.",
+	"author": "Wei Jinqi",
+	"authorUrl": "https://weijinqi.com",
+	"fundingUrl": {
+		"Buy Me a Coffee": "https://buymeacoffee.com/changshan",
+		"GitHub Sponsor": "https://github.com/sponsors/Bardreamaster"
+	},
 	"isDesktopOnly": false
 }
