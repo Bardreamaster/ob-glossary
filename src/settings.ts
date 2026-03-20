@@ -22,16 +22,14 @@ export class ObGlossarySettingTab extends PluginSettingTab {
         const {containerEl} = this;
         containerEl.empty();
 
-        containerEl.createEl('h2', {text: 'ObGlossary Plugin 设置'});
-
         new Setting(containerEl)
-            .setName('排序词汇时在标题后插入空行')
-            .setDesc('自动在四级标题和下方正文之间插入一个空行（推荐开启以保持源码模式的高可读性）。')
+            .setName(i18n_string('setting-empty-line-name'))
+            .setDesc(i18n_string('setting-empty-line-desc'))
             .addToggle(toggle => toggle
                 .setValue(this.plugin.settings.insertEmptyLineAfterHeading)
                 .onChange(async (value) => {
                     this.plugin.settings.insertEmptyLineAfterHeading = value;
                     await this.plugin.saveSettings();
-                }));
+                })).setHeading();
     }
 }

@@ -1,7 +1,7 @@
-import { Editor, MarkdownView, Plugin } from 'obsidian';
+import { Editor, MarkdownView, Plugin, Notice } from 'obsidian';
 import { DEFAULT_SETTINGS, ObGlossaryPluginSettings, ObGlossarySettingTab } from "./settings";
 import { sortGlossaryText } from './core/sorter';
-
+import { i18n_string } from './locales';
 
 export default class ObGlossaryPlugin extends Plugin {
 	settings: ObGlossaryPluginSettings;
@@ -16,7 +16,7 @@ export default class ObGlossaryPlugin extends Plugin {
 		// Add comands
 		this.addCommand({
 			id: "sort-glossary-terms",
-			name: "Sort terms in current glossary",
+			name: i18n_string('command-sort-glossary-terms'),
 			editorCheckCallback: (checking: boolean, editor: Editor, view: MarkdownView) =>{
 				if (view && view.file) {
 					const cache = this.app.metadataCache.getFileCache(view.file);
@@ -47,7 +47,8 @@ export default class ObGlossaryPlugin extends Plugin {
 				editor.setValue(sortedContent);
 			}
 		} catch (error) {
-			console.error("排序 ObGlossary 时出错:", error);  // todo: multi-language support
+			console.error(i18n_string('notice-sort-error'), error);
+			new Notice(i18n_string('notice-sort-error'));
 		}
 	}
 
