@@ -1,6 +1,6 @@
 # ob Glossary
 
-AManage glossaries in Obsidian.
+A plugin that manage glossaries in Obsidian.
 
 ## Usage
 
