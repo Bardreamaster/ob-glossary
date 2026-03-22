@@ -5,7 +5,8 @@ import {
 	ObGlossarySettingTab,
 } from "./settings";
 import { sortGlossaryText } from "./core/sorter";
-import { i18n_string } from "./locales";
+import { i18n_string, setLocale } from "./locales";
+import { ConceptNoteModal } from "./ui/ConceptNoteModal";
 
 export default class ObGlossaryPlugin extends Plugin {
 	settings: ObGlossaryPluginSettings;
@@ -14,10 +15,21 @@ export default class ObGlossaryPlugin extends Plugin {
 		// Load settings
 		await this.loadSettings();
 
+		setLocale(this.settings.pluginLanguage); // Set locale based on saved settings
+
 		// Add settings tab
 		this.addSettingTab(new ObGlossarySettingTab(this.app, this));
 
 		// Add comands
+
+		this.addCommand({
+			id: "create-concept-note",
+			name: i18n_string("command-create-concept-note"),
+			callback: () => {
+				new ConceptNoteModal(this.app, this).open();
+			},
+		});
+
 		this.addCommand({
 			id: "sort-glossary-terms",
 			name: i18n_string("command-sort-glossary-terms"),
