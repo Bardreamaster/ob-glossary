@@ -1,6 +1,6 @@
 {
     "name": "ob-glossary",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Manage glossaries in Obsidian.",
     "main": "main.js",
     "type": "module",
@@ -10,20 +10,31 @@
         "version": "node version-bump.mjs && git add manifest.json versions.json",
         "lint": "eslint .",
         "format": "npx prettier '**/*.{ts,tsx,js,jsx,mjs,cjs,mts,cts,json,css}' --write",
-        "format:check": "npx prettier '**/*.{ts,tsx,js,jsx,mjs,cjs,mts,cts,json,css}' --check"
+        "format:check": "npx prettier '**/*.{ts,tsx,js,jsx,mjs,cjs,mts,cts,json,css}' --check",
+        "prepare": "husky"
+    },
+    "nano-staged": {
+        "*.{ts,tsx,js,jsx,mjs,cjs,mts,cts}": [
+            "npx eslint --fix"
+        ],
+        "*.{ts,tsx,js,jsx,mjs,cjs,mts,cts,json,css}": [
+            "npx prettier --write"
+        ]
     },
     "keywords": [],
     "license": "0-BSD",
     "devDependencies": {
+        "@eslint/js": "9.30.1",
         "@types/node": "^16.11.6",
         "esbuild": "0.25.5",
         "eslint-plugin-obsidianmd": "0.1.9",
         "globals": "14.0.0",
+        "husky": "^9.1.7",
+        "jiti": "2.6.1",
+        "nano-staged": "^0.9.0",
         "tslib": "2.4.0",
         "typescript": "^5.8.3",
-        "typescript-eslint": "8.35.1",
-        "@eslint/js": "9.30.1",
-        "jiti": "2.6.1"
+        "typescript-eslint": "8.35.1"
     },
     "dependencies": {
         "obsidian": "latest"
