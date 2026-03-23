@@ -1,14 +1,14 @@
 {
-	"id": "ob-glossary",
-	"name": "ob Glossary",
-	"version": "1.0.1",
-	"minAppVersion": "1.12.4",
-	"description": "Manage glossaries in Obsidian.",
-	"author": "Wei Jinqi",
-	"authorUrl": "https://weijinqi.com",
-	"fundingUrl": {
-		"Buy Me a Coffee": "https://buymeacoffee.com/changshan",
-		"GitHub Sponsor": "https://github.com/sponsors/Bardreamaster"
-	},
-	"isDesktopOnly": false
+    "id": "ob-glossary",
+    "name": "ob Glossary",
+    "version": "1.0.1",
+    "minAppVersion": "1.12.4",
+    "description": "Manage glossaries in Obsidian.",
+    "author": "Wei Jinqi",
+    "authorUrl": "https://weijinqi.com",
+    "fundingUrl": {
+        "Buy Me a Coffee": "https://buymeacoffee.com/changshan",
+        "GitHub Sponsor": "https://github.com/sponsors/Bardreamaster"
+    },
+    "isDesktopOnly": false
 }
