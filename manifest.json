@@ -1,7 +1,7 @@
 {
     "id": "ob-glossary",
     "name": "ob Glossary",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "minAppVersion": "1.12.4",
     "description": "Manage glossaries in Obsidian.",
     "author": "Wei Jinqi",

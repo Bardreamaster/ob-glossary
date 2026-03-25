@@ -143,7 +143,7 @@ export class ConceptNoteModal extends Modal {
             title: "",
             id: moment().format("YYYYMMDD-HHmmss-SSS"),
             domain: "",
-            language: "zh",
+            language: "",
             folderPath: "",
         };
     }
@@ -225,6 +225,8 @@ export class ConceptNoteModal extends Modal {
         // 4. Language Selector
         let customLangSetting: Setting | null = null;
         const selectedLanguage = getLocale();
+        this.result.language =
+            selectedLanguage === "custom" ? "" : selectedLanguage;
 
         new Setting(contentEl)
             .setName(i18n_string("modal-language-label"))
